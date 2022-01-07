@@ -1,36 +1,44 @@
 .mobile-device {
   display: none;
 }
+
 .other-device {
   display: flex;
 }
+
 .item-image {
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 .product-name {
   letter-spacing: 0;
   font-weight: 700;
 }
+
 .hoddies {
   font-weight: 400;
 }
+
 .orginal-price {
   font-size: 30px;
   font-weight: 400;
   text-decoration: line-through;
   margin-bottom: 0px;
 }
+
 .current-price {
   margin-top: 0px;
   font-size: 35px;
   font-weight: 700;
 }
+
 .save {
   font-size: 30px;
   color: green;
   font-weight: 400;
 }
+
 .btn-size {
   padding: 25px 30px 25px 30px;
   margin-left: 10px;
@@ -39,7 +47,15 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-size: 20px;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
+
+.btn-size.active,
+.btn-size:hover {
+  color: #fff;
+  background-color: #2d2147;
+}
+
 .addtoBag {
   border: 0;
   outline: 0;
@@ -54,6 +70,7 @@
   border-radius: 40px;
   font-weight: 600;
 }
+
 .favourite {
   border: 2px solid gray;
 
@@ -68,16 +85,19 @@
   border-radius: 40px;
   font-weight: 700;
 }
+
 .description {
   font-size: 19px;
 
   font-weight: 500;
   color: rgb(77, 74, 74);
 }
+
 @media (max-width: 1160px) {
   .other-device {
     display: none;
   }
+
   .mobile-device {
     display: block;
   }

@@ -1,20 +1,24 @@
 import React from "react";
 import "./Collections.css";
 
-const Collections = () => {
+const Collections = ({ collectionData, handleCollection }) => {
   return (
-    <div>
+    <>
       <h1 className="titles-style">COLLECTIONS</h1>
       <div className="collections mt-3">
-        <button className="collections-btn" id="collections-btn">
-          OUTDOOR
-        </button>
-        <button className="collections-btn ">SUMMER</button>
-        <button className="collections-btn ">WINTER</button>
-        <button className="collections-btn ">CASUAL</button>
-        <button className="collections-btn ">SKIING</button>
+        {collectionData?.map((item, ind) => {
+          return (
+            <button
+              key={ind + "3434"}
+              onClick={() => handleCollection(item.collectionId)}
+              className={`collections-btn ${item.active ? "active" : ""}`}
+            >
+              {item.displayName}
+            </button>
+          );
+        })}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,24 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Row } from "react-bootstrap";
+import { CartState } from "../../../context/Context";
 import Product from "../Product/Product";
 import "./Products.css";
 
-const Products = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://5m6exoj3o7.execute-api.eu-west-1.amazonaws.com/prod/items?collection=winter2020&tag=sports"
-    )
-      .then((res) => res.json())
-      .then((data) => setAllProducts(data));
-  }, []);
+const Products = ({ allProducts }) => {
+  const { productLoading } = CartState();
   return (
     <>
-      <Row xs={1} md={2} lg={4} className="g-3 m-5">
-        {allProducts.map((productItem, index) => {
-          return <Product key={index} data={productItem}></Product>;
-        })}
-      </Row>
+      <div className={`products_container ${productLoading ? "active" : ""}`}>
+        {productLoading ? (
+          <div className="products_spinner">
+            <div className="swapping-squares-spinner">
+              <div className="square"></div>
+              <div className="square"></div>
+              <div className="square"></div>
+              <div className="square"></div>
+            </div>
+          </div>
+        ) : (
+          <Row xs={1} md={2} lg={4} className="g-3 m-5">
+            {allProducts.length === 0 ? (
+              <h4>Product Not Found</h4>
+            ) : (
+              allProducts.map((productItem) => {
+                return (
+                  <Product
+                    key={productItem.itemId}
+                    data={productItem}
+                  ></Product>
+                );
+              })
+            )}
+          </Row>
+        )}
+      </div>
     </>
   );
 };

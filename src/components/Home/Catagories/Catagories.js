@@ -1,16 +1,21 @@
 import React from "react";
 import "./Catagories.css";
-const Catagories = () => {
+const Catagories = ({ handleCategories, categoriesData }) => {
   return (
     <div>
       <h1 className="titles-style mt-4">CATAGORIES</h1>
       <div className="catagories mt-3">
-        <button className="catagories-btn" id="catagories-btn">
-          All
-        </button>
-        <button className="catagories-btn ms-2">Mens</button>
-        <button className="catagories-btn ms-2">Women</button>
-        <button className="catagories-btn ms-2">Shorts</button>
+        {categoriesData.map((item, ind) => {
+          return (
+            <button
+              key={ind + "34423"}
+              onClick={() => handleCategories(item.categoryId)}
+              className={`catagories-btn ${item.active ? "active" : ""}`}
+            >
+              {item.displayName}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

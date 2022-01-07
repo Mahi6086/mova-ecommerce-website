@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import { Carousel, Col, Row } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { CartState } from "../../../context/Context";
 import "./ProductDetails.css";
 
 const Product = () => {
+  const { dispatch, state } = CartState();
   const { itemId } = useParams();
   const [productDetails, setproductDetails] = useState({});
+  const [availableActive, setAvailableActive] = useState("");
+  const [loadData, setLoadData] = useState(false);
   useEffect(() => {
     if (itemId) {
+      setLoadData(false);
       fetch(
-        "https://5m6exoj3o7.execute-api.eu-west-1.amazonaws.com/prod/items?collection=winter2020&tag=sports"
+        "https://5m6exoj3o7.execute-api.eu-west-1.amazonaws.com/prod/items?fbclid=IwAR28tiBfhJtUGlHQjrH7J-tNuOPY9jMSp9ApWCiL_5jGTrqC0TZ_Y3C_9vs"
       )
         .then((res) => res.json())
         .then((data) => {
@@ -23,9 +29,37 @@ const Product = () => {
               details.picture,
             ],
           });
+
+          const availableSize = details.availableSizes;
+
+          const activeSizeArr = ["m", "s", "l", "xs", "xl", "xxl"];
+          let availableSizeChr = "";
+          let i = 0;
+
+          const selectActive = (chr) => {
+            for (let i = 0; i < availableSize.length; i++) {
+              if (availableSize[i].toLowerCase() === chr) {
+                availableSizeChr = availableSize[i];
+              }
+            }
+
+            if (availableSizeChr.length === 0) {
+              i = i + 1;
+              selectActive(activeSizeArr[i]);
+              return;
+            }
+          };
+
+          selectActive(activeSizeArr[i]);
+          setAvailableActive(availableSizeChr);
+          setLoadData(true);
         });
     }
   }, [itemId]);
+
+  const handleAvailableSize = (val) => {
+    setAvailableActive(val);
+  };
   return (
     <>
       <Row>
@@ -61,12 +95,50 @@ const Product = () => {
 
             <h5 className="fw-bold">Select Size</h5>
             <div className="product-size mt-3">
-              {productDetails?.availableSizes?.map((item) => (
-                <button className="btn-size">{item}</button>
-              ))}
+              {productDetails?.availableSizes?.map((item) => {
+                return (
+                  <button
+                    onClick={() => {
+                      handleAvailableSize(item);
+                    }}
+                    className={`btn-size ${
+                      item.toLowerCase() === availableActive.toLowerCase()
+                        ? "active"
+                        : ""
+                    }`}
+                  >
+                    {item}
+                  </button>
+                );
+              })}
             </div>
 
-            <button className="addtoBag mt-3">Add to Bag</button>
+            <button
+              onClick={() => {
+                if (loadData) {
+                  if (
+                    !state.cart.find(
+                      (item) =>
+                        item.id === productDetails.itemId &&
+                        item.size === availableActive
+                    )
+                  ) {
+                    dispatch({
+                      type: "ADD_TO_CART",
+                      payload: {
+                        id: productDetails.itemId,
+                        size: availableActive,
+                      },
+                    });
+                  } else {
+                    toast.error("This item allready added!");
+                  }
+                }
+              }}
+              className="addtoBag mt-3"
+            >
+              Add to Bag
+            </button>
             <br />
             <button className="favourite mt-3">Favourite</button>
             <h5 className="fw-bold mt-5">Description</h5>

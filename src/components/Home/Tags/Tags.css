@@ -4,43 +4,35 @@
   align-items: center;
   margin-left: 47px;
 }
-#tags-btn {
-  padding: 6px 13px;
-  font-size: 18px;
-  font-weight: 400;
-  border: 2px solid rgb(226, 226, 228);
-  border-radius: 75px;
-  background-color: #2d2147;
-  color: #fff;
-}
-#tags-btn:hover {
-  background-color: #fff;
-  color: #2d2147;
-  font-weight: 500;
-}
+
 .tags-btn {
   padding: 7px 26px;
   font-size: 18px;
   font-weight: 500;
   border: 2px solid rgb(226, 226, 228);
   border-radius: 25px;
+  margin-right: 8px;
 }
+
+.tags-btn.active,
 .tags-btn:hover {
   background-color: #2d2147;
   color: #fff;
-  font-weight: 400;
 }
+
 #horizental-line {
   border-bottom: 3px solid rgb(219, 219, 219);
   width: 100%;
   margin: 20px 5px 0 5px;
 }
+
 @media (min-width: 321px) and (max-width: 768px) {
   .tags {
     display: flex;
     flex-direction: column;
     align-items: start;
   }
+
   .tags-btn {
     margin-left: 47px;
     margin-bottom: 20px;

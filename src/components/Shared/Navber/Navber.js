@@ -1,10 +1,15 @@
 import React from "react";
-import "./Navber.css";
-import logo from "../../../assets/images/logo.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../../assets/images/logo.png";
+import { CartState } from "../../../context/Context";
+import "./Navber.css";
 
 const Navber = () => {
+  const {
+    state: { cart },
+  } = CartState();
+
   return (
     <>
       <Navbar bg="whate" expand="lg">
@@ -30,6 +35,7 @@ const Navber = () => {
               <Link className="text-black" to="/cartItems">
                 <div className="cart-icon">
                   <i className="fas fa-shopping-cart"></i>
+                  {cart.length}
                 </div>
               </Link>
             </Nav>

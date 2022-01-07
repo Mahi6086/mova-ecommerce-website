@@ -2,26 +2,32 @@
   font-weight: 700;
   letter-spacing: 0px;
 }
+
 .TOTAL-items {
   font-weight: 400;
 }
+
 .Box {
   padding: 30px 100px;
 }
+
 .item-box {
   border: 2px solid black;
-  padding: 100px;
 }
+
 #item-box {
-  border: 2px solid gainsboro;
-  padding: 100px 0px 100px 0px;
+  border: 3px solid gainsboro;
+  padding: 25px 20px 10px 20px;
 }
+
 .Bag-box {
   margin: 50px 0px 0px 85px;
 }
+
 .order-box {
   padding: 250px 150px;
 }
+
 .Checkout {
   width: 400px;
   display: flex;
@@ -40,7 +46,24 @@
   border-radius: 10px;
   font-weight: 600;
 }
+
 .Checkout-box {
   margin-right: 250px;
   padding-left: 15px;
+}
+
+.size-input {
+  width: 50px;
+  font-size: 22px;
+  padding: 0;
+}
+
+.size-input:hover {
+  background-color: transparent !important;
+  color: #2d2147;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
