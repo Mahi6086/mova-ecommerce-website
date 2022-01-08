@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Navber from "./components/Shared/Navber/Navber";
 import NotFound from "./components/Shared/NotFound/NotFound";
 import CartItems from "./components/Shop/CartItems/CartItems";
+import CheckOut from "./components/Shop/CheckOut/CheckOut";
 import ProductDetails from "./components/Shop/ProductDetails/ProductDetails";
 import { CartState } from "./context/Context";
 
@@ -39,6 +40,7 @@ function App() {
                 element={<ProductDetails />}
               ></Route>
               <Route path="/cartItems" element={<CartItems />}></Route>
+              <Route path="/checkOut" element={<CheckOut />}></Route>
               <Route path="*" element={<NotFound />}></Route>
             </Routes>
           </Container>

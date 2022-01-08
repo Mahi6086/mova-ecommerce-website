@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { CartState } from "../../../context/Context";
 import "./CartItems.css";
 
@@ -197,12 +198,14 @@ const CartItems = () => {
         </Col>
         <Col xs={12} md={6}>
           <div className="order-box">
-            <button className="Checkout">
-              <span className="Checkout-box">Checkout</span>
-              <span className="right-arrow">
-                <i className="fas fa-arrow-right"></i>
-              </span>
-            </button>
+            <Link className="Link" to="/checkOut">
+              <button className="Checkout">
+                <span className="Checkout-box">Checkout</span>
+                <span className="right-arrow">
+                  <i className="fas fa-arrow-right"></i>
+                </span>
+              </button>
+            </Link>
             <div id="item-box">
               <div>
                 <h3>ORDER SUMMARY</h3>

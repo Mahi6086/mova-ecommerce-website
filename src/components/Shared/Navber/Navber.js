@@ -32,10 +32,12 @@ const Navber = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Link className="text-black" to="/cartItems">
+              <Link className="text-black carticon" to="/cartItems">
                 <div className="cart-icon">
-                  <i className="fas fa-shopping-cart"></i>
-                  {cart.length}
+                  <i className="fas fa-shopping-cart "></i>
+                  <span className="cart-badge">
+                    <span>{cart.length}</span>
+                  </span>
                 </div>
               </Link>
             </Nav>
