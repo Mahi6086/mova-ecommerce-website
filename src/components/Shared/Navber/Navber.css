@@ -1,5 +1,6 @@
 .nova {
   margin-left: 32px;
+  width: 80%;
 }
 .horizental-line {
   border-top: 3px solid rgb(219, 219, 219);
@@ -44,5 +45,15 @@
   .cart-icon {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    margin-left: 140px;
+  }
+  .cart-icon > i {
+    font-size: 30px;
+    text-decoration: none;
+  }
+  .nova {
+    margin-left: 38px;
+    width: 60%;
   }
 }

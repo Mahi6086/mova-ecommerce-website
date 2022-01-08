@@ -11,10 +11,54 @@
 }
 .product-item {
   text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .displayName {
   color: black;
 }
 .currentPrice {
   color: black;
+}
+.product-card {
+  position: relative;
+}
+.card-hover {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(45, 33, 71, 0.2);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: all;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card-hover-btn {
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  color: black;
+  border-radius: 32px;
+  background-color: white;
+}
+.card-hover:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+.product-item:hover {
+  transform: translateY(-10px);
+}
+.card-hover-btn:hover {
+  color: white;
+}
+@media (max-width: 668px) {
+  .card-hover-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    margin-right: 40px;
+  }
 }

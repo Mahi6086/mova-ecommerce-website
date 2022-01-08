@@ -8,8 +8,16 @@ const Product = ({ data }) => {
   return (
     <>
       <Col>
-        <Link className="product-item" to={`/productDetails/${itemId}`}>
-          <Card>
+        <div className="product-item">
+          <Card className="product-card">
+            <div className="card-hover">
+              <Link
+                className="catagories-btn card-hover-btn"
+                to={`/productDetails/${itemId}`}
+              >
+                Order Now{" "}
+              </Link>
+            </div>
             <figure>
               <Card.Img className="image" variant="top" src={picture} />
             </figure>
@@ -24,7 +32,7 @@ const Product = ({ data }) => {
               <p className="product-color">3 color</p>
             </Card.Body>
           </Card>
-        </Link>
+        </div>
       </Col>
     </>
   );

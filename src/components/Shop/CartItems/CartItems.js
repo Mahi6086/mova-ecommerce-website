@@ -132,10 +132,10 @@ const CartItems = () => {
               return (
                 <div key={ind + "53489"} className="Box ">
                   <div className="item-box row">
-                    <div className="col-4">
+                    <div className="col-12 col-md-4">
                       <img className="img-fluid" src={pditem.picture} alt="" />
                     </div>
-                    <div className="col-8">
+                    <div className="col-12 col-md-8">
                       <div className="py-3">
                         <div className="d-flex justify-content-between">
                           <h3 className="fw-bolder">{pditem.productName}</h3>
@@ -199,12 +199,10 @@ const CartItems = () => {
         <Col xs={12} md={6}>
           <div className="order-box">
             <Link className="Link" to="/checkOut">
-              <button className="Checkout">
-                <span className="Checkout-box">Checkout</span>
-                <span className="right-arrow">
-                  <i className="fas fa-arrow-right"></i>
-                </span>
-              </button>
+              <span>Checkout</span>
+              <span>
+                <i className="fas fa-arrow-right"></i>
+              </span>
             </Link>
             <div id="item-box">
               <div>

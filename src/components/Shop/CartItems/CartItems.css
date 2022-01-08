@@ -69,4 +69,63 @@
 }
 .Link {
   text-decoration: none;
+  background: #2d2147;
+  width: 70%;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.Link:hover {
+  color: white;
+}
+@media (max-width: 668px) {
+  .Checkout-box {
+    margin-right: 0px;
+    padding-left: 0px;
+  }
+  .Box {
+    padding: 15px 15px;
+    margin-bottom: 10px;
+  }
+  .Checkout {
+    width: 0px;
+    padding-left: 0px;
+    padding-right: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+  .order-box {
+    padding: 30px 20px;
+  }
+  #item-box {
+    border: 3px solid gainsboro;
+    padding: 25px 20px 10px 10px;
+  }
+  .order-box > .Link {
+    background: #2d2147;
+    width: 100%;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .Bag-box {
+    margin: 50px 0px 0px 5px;
+  }
 }

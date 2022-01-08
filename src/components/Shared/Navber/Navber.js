@@ -17,12 +17,7 @@ const Navber = () => {
           <Navbar.Brand href="#">
             {" "}
             <NavLink to="/home">
-              <img
-                className="nova"
-                style={{ width: "80%" }}
-                src={logo}
-                alt=""
-              />
+              <img className="nova" src={logo} alt="" />
             </NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

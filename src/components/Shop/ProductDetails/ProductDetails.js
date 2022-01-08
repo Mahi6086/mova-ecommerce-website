@@ -101,7 +101,7 @@ const Product = () => {
                     onClick={() => {
                       handleAvailableSize(item);
                     }}
-                    className={`btn-size ${
+                    className={` mb-2 btn-size ${
                       item.toLowerCase() === availableActive.toLowerCase()
                         ? "active"
                         : ""

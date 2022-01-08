@@ -101,4 +101,19 @@
   .mobile-device {
     display: block;
   }
+  .addtoBag {
+    padding-left: 98px;
+    padding-right: 96px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .favourite {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 20px;
+  }
 }
