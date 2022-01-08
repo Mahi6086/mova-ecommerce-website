@@ -38,6 +38,7 @@ const CartItems = () => {
     }
     if (cart.length === 0) {
       setCartData([]);
+      setTotalPrice(0);
     }
   }, [cart, product]);
 
